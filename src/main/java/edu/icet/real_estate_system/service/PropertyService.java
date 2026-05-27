@@ -14,8 +14,10 @@ public class PropertyService {
     private PropertyRepository repository;
 
     public PropertyEntity addProperty(PropertyEntity property) {
-        // automtclly set availbl when add a new property
-        property.setStatus("Available");
+
+        if (property.getStatus() == null || property.getStatus().isEmpty()) {
+            property.setStatus("Available");
+        }
         return repository.save(property);
     }
 
