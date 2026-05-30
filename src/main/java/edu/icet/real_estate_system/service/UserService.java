@@ -5,6 +5,7 @@ import edu.icet.real_estate_system.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +30,9 @@ public class UserService {
             return foundUser.get();
         }
         return null;
+    }
+
+    public List<UserEntity> getAllUsers() {
+        return repository.findAll();
     }
 }
