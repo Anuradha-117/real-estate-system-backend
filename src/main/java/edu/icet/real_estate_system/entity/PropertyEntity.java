@@ -20,4 +20,5 @@ public class PropertyEntity {
     private Double price;
     private String propertyType;
     private String status;       // Available, Sold, Rented
+    private String sellerEmail;
 }
