@@ -17,13 +17,10 @@ public class InquiryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long propertyId;
     private String customerEmail;
-
     private String message;
     private String contactNumber;
-
     private String status; //Pending,Contacted or Resolved
     private LocalDateTime inquiryDate;
 }

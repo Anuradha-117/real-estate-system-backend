@@ -4,7 +4,6 @@ import edu.icet.real_estate_system.entity.PropertyEntity;
 import edu.icet.real_estate_system.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -23,5 +22,15 @@ public class PropertyController {
     @GetMapping("/all")
     public List<PropertyEntity> getProperties() {
         return service.getAllProperties();
+    }
+
+    @PutMapping("/update/{id}")
+    public PropertyEntity updateProperty(@PathVariable Long id, @RequestBody PropertyEntity property) {
+        return service.updateProperty(id, property);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteProperty(@PathVariable Long id) {
+        service.deleteProperty(id);
     }
 }

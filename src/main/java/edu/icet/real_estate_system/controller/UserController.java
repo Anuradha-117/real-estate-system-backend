@@ -4,7 +4,6 @@ import edu.icet.real_estate_system.entity.UserEntity;
 import edu.icet.real_estate_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
