@@ -4,7 +4,6 @@ import edu.icet.real_estate_system.entity.InquiryEntity;
 import edu.icet.real_estate_system.repository.InquiryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,5 +25,13 @@ public class InquiryService {
 
     public List<InquiryEntity> getInquiriesForProperty(Long propertyId) {
         return repository.findByPropertyId(propertyId);
+    }
+
+    public InquiryEntity resolveInquiry(Long id) {
+        InquiryEntity existingInquiry = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Inquiry not found"));
+
+        existingInquiry.setStatus("Resolved");
+        return repository.save(existingInquiry);
     }
 }

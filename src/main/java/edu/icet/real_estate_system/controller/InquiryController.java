@@ -28,4 +28,9 @@ public class InquiryController {
     public List<InquiryEntity> getByProperty(@PathVariable Long propertyId) {
         return service.getInquiriesForProperty(propertyId);
     }
+
+    @PutMapping("/resolve/{id}")
+    public InquiryEntity resolveInquiry(@PathVariable Long id) {
+        return service.resolveInquiry(id);
+    }
 }

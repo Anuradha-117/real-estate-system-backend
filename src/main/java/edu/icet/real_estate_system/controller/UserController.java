@@ -28,4 +28,9 @@ public class UserController {
     public List<UserEntity> getAllUsers() {
         return service.getAllUsers();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        service.deleteUser(id);
+    }
 }
