@@ -21,4 +21,5 @@ public class PropertyEntity {
     private String propertyType;
     private String status;       // Available, Sold, Rented
     private String sellerEmail;
+    private String imageUrl;
 }
